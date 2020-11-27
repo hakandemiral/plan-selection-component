@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  font-family: 'Mulish', sans-serif;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+body {
+    background-color: #EBEEF2;
+}
+
+.component {
+
+    &--plan {
+        width: 916px;
+        margin: 130px auto;
+
+        #billing-type {
+            display: none;
+
+            &:checked {
+
+                + .head label {
+
+                    span {
+                        &:first-child {
+                            opacity: .7;
+                        }
+    
+                        &:last-child {
+                            opacity: 1;
+                        }
+                    }
+    
+                    &::before {
+                        left: 107px;
+                    }
+                }
+
+                + .head + .plan-cards .plan .pricing {
+
+                    .price span::before {
+                        content: attr(data-yearly);
+                    }
+
+                    .type::after {
+                        content: 'yearly';
+                    }
+                }
+            }
+        }
+
+        .head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 55px;
+
+            h5 {
+                font-weight: 900;
+                font-size: 42px;
+            }
+
+            label{
+                width: 212px;
+                height: 50px;
+                background-color: #D4D9E0;
+                border-radius: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                z-index: 1;
+                user-select: none;
+                cursor: pointer;
+
+                span {
+                    width: 100px;
+                    display: grid;
+                    place-items: center;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #171922;
+                    transition: 200ms opacity ease-in-out;
+
+                    &:first-child {
+                        opacity: 1;
+                    }
+
+                    &:last-child {
+                        opacity: .7;
+                    }
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 100px;
+                    height: 40px;
+                    border-radius: 25px;
+                    background-color: #fff;
+                    left: 5px;
+                    z-index: -1;
+                    transition: 200ms left ease-in-out;
+                    box-shadow: 0 15px 13px -12px rgba($color: #8693A4, $alpha: .74);
+                }
+            }
+        }
+
+        .plan-cards {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            color: #171922;
+
+            .plan {
+                width: 440px;
+                border-radius: 5px;
+                background-color: #fff;
+                padding: 45px;
+                display: flex;
+                flex-direction: column;
+                transition: 300ms box-shadow ease-in-out, 300ms transform ease-in-out;
+
+                h6 {
+                   font-size: 28px;
+                   font-weight: 600px;
+                   margin-bottom: 35px;
+                }
+
+                .pricing {
+
+                    .price {
+                        font-size: 22px;
+                        font-weight: 600;
+                        margin-bottom: 10px;
+
+                        span::before {
+                            content: attr(data-monthly);
+                        }
+                        
+                    }
+
+                    .type {
+                        opacity: .7;
+                        font-size: 18px;
+                        margin-bottom: 30px;
+
+                        &::after {
+                            content: 'monthly';
+                        }
+                    }
+
+                }
+
+                p {
+                    opacity: .7;
+                    font-size: 16px;
+                    line-height: 25px;
+                    margin-bottom: 35px;
+                }
+
+                button {
+                    margin-top: auto;
+                    height: 60px;
+                    border-radius: 5px;
+                    background-color: #fff;
+                    border: solid 1px #171922;
+                    font-size: 18px;
+                    font-weight: 700;
+                    cursor: pointer;
+                    transition: 300ms color ease-in-out, 300ms background-color ease-in-out;
+                }
+
+                &:hover {
+                    transform: scale(1.04);
+                    box-shadow: 0 15px 13px 12px rgba($color: #8693A4, $alpha: .74);
+
+                    button {
+                        background-color: #171922;
+                        color: #fff;
+
+                    }
+                }
+
+            }
+        }
+    }
+}

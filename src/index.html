@@ -3,11 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Web Boilerplate</title>
+    <title>Plan Selection Component</title>
     <link rel="stylesheet" href="stylesheets/style.min.css">
 </head>
 <body>
-    
+    <div class="component--plan">
+        <input id="billing-type" type="checkbox">
+
+        <div class="head">
+            <h5>Choose your plan</h5>
+            <label for="billing-type">
+                <span>Monthly</span>
+                <span>Yearly</span>
+            </label>
+        </div>
+
+        <div class="plan-cards">
+
+            <div class="plan">
+                <h6>Starter</h6>
+                <div class="pricing">
+                    <div class="price"><span id="starter" data-monthly="$8.99" data-yearly="$5.99"></span> / month</div>
+                    <div class="type">Billed </div>
+                </div>
+                <p>Pretium fusce id velit ut tortor pretium. Sit amet consectetur adipiscing elit ut. Condimentum mattis pellentesque id nibh. Euismod elementum.</p>
+                <button>Get started</button>
+            </div>
+
+            <div class="plan">
+                <h6>Professional</h6>
+                <div class="pricing">
+                    <div class="price"><span id="starter" data-monthly="$19.99" data-yearly="$14.99"></span> / month</div>
+                    <div class="type">Billed </div>
+                </div>
+                <p>Duis at consectetur lorem donec massa sapien faucibus. Ac placerat vestibulum lectus mauris. </p>
+                <button>Get started</button>
+            </div>
+
+        </div>
+    </div>
     <script src="javascripts/app.min.js"></script>
 </body>
 </html>
